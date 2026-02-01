@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cerita Kita</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background: linear-gradient(135deg, #ff8fd8, #8f5bff);
+      color: white;
+      text-align: center;
+    }
+
+    /* JUDUL */
+    h1{
+      margin-top:40px;
+      font-size:3em;
+      letter-spacing:2px;
+    }
+
+    /* LOVE */
+    .heart{
+      margin:20px auto;
+      width:50px;
+      height:50px;
+      background:red;
+      position:relative;
+      transform: rotate(-45deg);
+      animation: beat 1s infinite;
+    }
+
+    .heart::before,
+    .heart::after{
+      content:"";
+      width:50px;
+      height:50px;
+      background:red;
+      border-radius:50%;
+      position:absolute;
+    }
+
+    .heart::before{
+      top:-25px;
+      left:0;
+    }
+
+    .heart::after{
+      left:25px;
+      top:0;
+    }
+
+    @keyframes beat{
+      0%{transform: scale(1) rotate(-45deg);}
+      50%{transform: scale(1.2) rotate(-45deg);}
+      100%{transform: scale(1) rotate(-45deg);}
+    }
+
+    /* MUSIK */
+    audio{
+      margin:20px;
+    }
+
+    /* CERITA */
+    .story-section{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:30px;
+      padding:40px;
+    }
+
+    .story{
+      max-width:400px;
+      background: rgba(255,255,255,0.15);
+      padding:20px;
+      border-radius:15px;
+      text-align:left;
+    }
+
+    .photo-box img{
+      width:250px;
+      border-radius:15px;
+    }
+
+    /* GALERI */
+    .gallery{
+      padding:30px;
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px,1fr));
+      gap:15px;
+    }
+
+    .gallery-grid img{
+      width:100%;
+      border-radius:15px;
+    }
+
+    footer{
+      margin:30px 0;
+      opacity:0.8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- JUDUL -->
+  <h1>Cerita Kita</h1>
+
+  <!-- LOVE -->
+  <div class="heart"></div>
+
+  <!-- MUSIK -->
+  <audio controls autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- CERITA + FOTO -->
+  <div class="story-section">
+    <div class="story">
+      <h2>Cerita Kita</h2>
+      <p>
+        Dari pertama kali kenal, sampai akhirnya semua rasa ini tumbuh.
+        Semua tawa dan kenangan kita simpan di sini 💕
+      </p>
+    </div>
+
+    <div class="photo-box">
+      <img src="foto1.jpg">
+    </div>
+  </div>
+
+  <!-- GALERI -->
+  <div class="gallery">
+    <h2>Galeri Kenangan</h2>
+    <div class="gallery-grid">
+      <img src="foto2.jpg">
+      <img src="foto3.jpg">
+      <img src="foto4.jpg">
+      <img src="foto5.jpg">
+      <img src="foto6.jpg">
+    </div>
+  </div>
+
+  <footer>
+    Dibuat dengan cinta 💗
+  </footer>
+
+</body>
+</html>
